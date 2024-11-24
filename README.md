@@ -21,3 +21,27 @@ CFLAGS+="-Wno-unused-but-set-variable" ./configure \                            
   --http-log-path=/opt/homebrew/var/log/nginx/access.log \
   --error-log-path=/opt/homebrew/var/log/nginx/error.log
 
+
+
+  OR
+
+  ./configure \
+    --prefix=/opt/nginx \
+    --with-http_ssl_module \
+    --with-pcre \
+    --add-module=nginx-rtmp-module \
+    --with-ipv6 \
+    --with-cc-opt='-I/opt/homebrew/include -I/opt/homebrew/opt/pcre/include -I/opt/homebrew/opt/openssl@3/include' \
+    --with-ld-opt='-L/opt/homebrew/lib -L/opt/homebrew/opt/pcre/lib -L/opt/homebrew/opt/openssl@3/lib' \
+    --conf-path=/opt/homebrew/etc/nginx/nginx.conf \
+    --pid-path=/opt/homebrew/var/run/nginx.pid \
+    --lock-path=/opt/homebrew/var/run/nginx.lock \
+    --http-client-body-temp-path=/opt/homebrew/var/run/nginx/client_body_temp \
+    --http-proxy-temp-path=/opt/homebrew/var/run/nginx/proxy_temp \
+    --http-fastcgi-temp-path=/opt/homebrew/var/run/nginx/fastcgi_temp \
+    --http-uwsgi-temp-path=/opt/homebrew/var/run/nginx/uwsgi_temp \
+    --http-scgi-temp-path=/opt/homebrew/var/run/nginx/scgi_temp \
+    --http-log-path=/opt/homebrew/var/log/nginx/access.log \
+    --error-log-path=/opt/homebrew/var/log/nginx/error.log
+
+
